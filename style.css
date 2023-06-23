@@ -1,6 +1,50 @@
-.box {
-    width: 15em; 
-    height: 10em; 
-    font-size: 1.2em;
-    background-color: blue;
+
+.grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1em;
+    grid-auto-rows: minmax(100px, auto); 
 }
+
+.photo-box {
+    grid-column: 1/6;
+    grid-row: 1/3; 
+    text-align: center;
+    background-color: #304673
+    
+}
+.stored-dreams {
+    background-color: #2A6973;
+    grid-column: 1/1;
+    grid-row: 3/9; 
+    text-align: center;
+}
+
+.selected-dream {
+    background-color: #736A25;
+    grid-row: 3/6; 
+    grid-column: 2/6;
+}
+
+.dream-form {
+    background-color:#423673;
+    grid-row: 6/9; 
+    grid-column: 2/6;
+    text-align: center;
+    display: bottom;
+}
+
+#dream-text-area {
+    height: 239px;
+    width: 900px;
+    position: absolute;
+    top: 638px;
+    left: 264px; 
+    background-color: #73543C;
+    opacity: 0.5;
+}
+
+/* #text-button {
+    position: absolute;
+} */
