@@ -12,23 +12,21 @@
 
 <div class="grid"> 
     <div class="photo-box"> 
-       <h3>CURRENT DREAM PLACE HOLDER</h3>
-       <image> place holder image</image>
+       <h3>SELECTED DREAMS TITLE</h3>
+       <img id='relevant-image'src="https://images.saatchiart.com/saatchi/303750/art/7960988/7028455-HSC00001-7.jpg" alt="Example Image">
     </div>
     <div class="stored-dreams"> 
-        <h4>stored dreams</h4>
+        <h4>PAST DREAMS</h4>
     </div>
     <div class='selected-dream'> selected dream</div>
 
-    <div class="dream-form">
-        <div>dream form</div>  
-        <form id="text-button">
-            <div>
-                <textarea id='dream-text-area'> </textarea>
-            </div>  
-            <button id="text-button">Submit</button>
-        </form>
-
+        <div class="dream-form">
+           <h3>NEW DREAM ENTRY</h3> 
+            <form id="text-form">
+                    <textarea id='dream-text-area' type="text" name="details" placeholder="Write the details of your dream here"> </textarea>   
+                    <input id='title-entry' type="text" name="title" placeholder="Dream Title">
+            </form>
+        <button id="text-button">Submit</button>
 
     </div>
 

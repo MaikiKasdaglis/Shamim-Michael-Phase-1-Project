@@ -1,0 +1,34 @@
+
+{
+    "current-stored-dreams": [
+      {
+        "id": 1,
+        "title": "Penguin Dream",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsZhFrsNRMjnd7cCA0rIm6gXJJGCUPTGwlRw&usqp=CAU",
+        "dream-details": "In the dream, you find yourself in a penguin colony where all the penguins have suddenly gained the ability to dance like professional ballerinas. They organize a grand dance competition, and you are chosen as their judge. As the penguins gracefully twirl and spin around the icy stage, you struggle to keep a straight face, witnessing the hilarious sight of penguins attempting intricate ballet moves. The dream ends with you awarding the coveted \"Golden Fish\" trophy to the most enthusiastic and comically clumsy penguin dancer. ",
+        "rating": 0,
+        "theme": "PENGUINS"
+ 
+      },
+
+      {
+        "id": 2,
+        "title": "Otter Dream",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmZzDR9SzL7-s9KKxp3tPt_WU-jx4cpt0AOw&usqp=CAU",
+        "dream-details": "In this dream, imagine a group of otters forming a rock band called \"The Ottertudes.\" They have their own hit song called \"The Jazzy Juggle,\" where they play instruments made out of seashells and rocks. They perform concerts on a floating stage in the middle of a river, with other animals as their enthusiastic audience. The otters' juggling skills are so amazing that they juggle fish, pebbles, and even each other while playing their instruments. The dream ends with the otters receiving a standing ovation, and the river turning into a giant dance party.",
+        "rating": 0,
+        "theme": "OTTERS"
+ 
+      },
+
+      {
+        "id": 3,
+        "title": "Pomeranian Dream",
+        "image":"https://media.istockphoto.com/id/1351984633/photo/cute-puppy-pomeranian-mixed-breed-pekingese-dog-run-on-the-grass-with-happiness.jpg?s=1024x1024&w=is&k=20&c=ssLUkvrH-Fr4kZTFVhqJvWsHQoKvGfQ-mgvOjdCDphU=",
+        "dream-details": "The dream starts with Pomeranians organizing secret meetings in dog parks, where they discuss their strategies for world domination. They create a Pomeranian army, complete with tiny uniforms and helmets, and train themselves in covert operations. They even develop advanced technology, like miniature tanks and helicopters, all designed to suit their small stature.",
+        "rating": 0,
+        "theme": "POMERANIANS"
+ 
+      }
+    ]
+  }
