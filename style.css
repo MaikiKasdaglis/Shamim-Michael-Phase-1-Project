@@ -1,3 +1,4 @@
+
 .grid {
     display: grid;
     grid-auto-flow: column;
@@ -22,11 +23,35 @@
     grid-row: 3/9; 
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(9, 1fr);
-    grid-gap: 1em;
+    grid-gap: 0em;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+#pd-title {
+    grid-column: 1/4;
+    grid-row: 1/1;
+    text-align: center;
+}
+
+.dream-title {
+   grid-column: 1/4; 
+   grid-row: auto;
+   margin: 1em;
+   text-align: left;
+   
+}
+.dream-theme {
+    grid-column: 1/4;
+    grid-row: auto;
+    margin: 2em;
+ 
+}
+.dream-rating {
+    grid-column: 1/4;
+    grid-row: auto;
+    margin: 2em;
 }
 
 .selected-dream {
@@ -54,6 +79,8 @@
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+
 
 #dream-text-area {
     position: absolute;
@@ -90,10 +117,10 @@
 
 #title-entry {
     position: absolute;
-    top: 26%;
-    left: 10%;
+    top: 7em;
+    left: 8em;
     transform: translate(-50%, -50%);
-    width: 10em;
+    width: 11em;
     height: 3em;
     margin-top: -3em;
     background-color: #73543C;
@@ -107,6 +134,7 @@
 
 }
 
+
 #relevant-image {
     grid-row: 6/9;
     grid-column: 2/6;
@@ -115,3 +143,10 @@
     margin-top: -1em;
 
 }
+
+
+.display-image {
+    height: 10em;
+    width: 13em;
+}
+

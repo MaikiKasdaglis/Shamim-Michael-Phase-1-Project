@@ -16,15 +16,21 @@
        <img id='relevant-image'src="https://images.saatchiart.com/saatchi/303750/art/7960988/7028455-HSC00001-7.jpg" alt="Example Image">
     </div>
     <div class="stored-dreams"> 
-        <h4>PAST DREAMS</h4>
+        <h4 id="pd-title">PAST DREAMS</h4>
     </div>
-    <div class='selected-dream'> selected dream</div>
+
+
+    <div class='selected-dream'> selected dream</div> 
+    <!-- having such a hard time formatting, didnt bother staerting here. will need to display;
+    title, theme, rating, description, and image(ideally in background) of currend selected dream -->
 
         <div class="dream-form">
-           <h3>NEW DREAM ENTRY</h3> 
             <form id="text-form">
+
                     <textarea id='dream-text-area' type="text" name="details" placeholder="Write the details of your dream here"> </textarea>   
                     <input id='title-entry' type="text" name="title" placeholder="Dream Title">
+                    <!-- need to add rating system (stars may be too technical for now) as well as theme form (dropdown may be too technical as well.) 
+                    like the rest of the app, formatting is proving difficult  -->
             </form>
         <button id="text-button">Submit</button>
 
