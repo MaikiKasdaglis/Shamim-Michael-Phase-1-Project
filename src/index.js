@@ -153,7 +153,7 @@ let dreamObject = {
     details: '',
     image: '',
 }
-button.addEventListener('click', e => {
+button.addEventListener('Submit', e => {
     e.preventDefault()
     console.log(dreamDetails.value)
     console.log(titleEntry.value)
@@ -162,6 +162,7 @@ button.addEventListener('click', e => {
     dreamObject.rating = starValue
     console.log(dreamObject)
     pastDreamList(dreamObject)
+    postFunction(dreamObject)
 })//we hella need to figure out the rating as well as the theme functionality 
 
 // eventlistner for ratting stars
@@ -184,7 +185,7 @@ stars.forEach((star, clickedIdx) => {
         starValue = clickedIdx + 1;
         console.log(`star of index ${clickedIdx} was clicked`)
     })
-   postFunction(dreamObject)
+//    postFunction(dreamObject)
    
    
 })
