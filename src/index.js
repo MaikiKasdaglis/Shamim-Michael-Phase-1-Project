@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }) 
         const query = 'nature'
         fetch(`https://api.pexels.com/v1/search?query=${query}`,{
-            method: "GET",
+            method : "GET",
             mode  : 'cors',
             headers : {
                 "Authorization":"kZLIYkxusXzOsvUbw9OAZaadOKSuJVzhvnHgS2oJOXAcUQ8kzZUn4uVo",
