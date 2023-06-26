@@ -103,9 +103,10 @@ function selectedDreamDetails(dream) {
     theme.innerText = ` Theme: ${dream.theme}`
     rating.innerText = `Rating: ${dream.rating}`
     details.innerText = `Details: ${dream.details}`
-    
-   selectedDream.style.backgroundImage = `url(${dream.image})`
-    selectedDream.append(title, theme, rating, details)
+    image.src = dream.image
+
+   //selectedDream.style.backgroundImage = `url(${dream.image})`
+    selectedDream.append(title, theme, rating, details, image)
     
 }
 
