@@ -1,4 +1,4 @@
-
+ 
 .grid {
     display: grid;
     grid-auto-flow: column;
@@ -238,3 +238,34 @@
     height: 15em;
     width: 18em;
 }
+.stars {
+    position: absolute;
+    top: 14em;
+    left: 2.5em;
+    margin-top: -3em;
+
+}
+
+.stars .disabled{
+    pointer-events: none;
+
+}
+.stars a.active{
+    opacity: 100%;
+}
+
+.stars a{
+    opacity: 50%;
+    cursor: pointer;
+    padding: 3px;
+} 
+.stars:hover a {
+    opacity: 100%;
+}
+.stars a:hover{
+    opacity: 100% ;
+}
+.stars a:hover ~ a {
+    opacity: 50%;
+}
+ 

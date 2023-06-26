@@ -20,9 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
          }) .then(res => res.json())
             .then(data => 
                 console.log(`photo querey`, data))
-    
-})
 
+   
+  }
+    )
+
+ 
 
 
 
@@ -119,8 +122,6 @@ function photoChangBack (element) {
     element.classList.add('display-image')
     }
 
-
-
 button = document.querySelector('#text-button')
 dreamDetails = document.querySelector("#dream-text-area")
 titleEntry = document.querySelector('#title-entry')
@@ -137,16 +138,33 @@ button.addEventListener('click', e => {
     console.log(titleEntry.value)
     dreamObject.details = dreamDetails.value
     dreamObject.title = titleEntry.value
+    dreamObject.rating = starValue
     console.log(dreamObject)
     pastDreamList(dreamObject)
+})//we hella need to figure out the rating as well as the theme functionality 
 
+// eventlistner for ratting stars
+
+const stars = document.querySelectorAll(".stars a");
+const starwrapper = document.querySelector(".stars ");
+let starValue = null
+
+stars.forEach((star, clickedIdx) => {
+    star.addEventListener('click', () => {
+        starwrapper.classList.add('disabled');
+
+        stars.forEach((otherStar, otheridx) => {
+            if(otheridx <= clickedIdx) {
+                otherStar.classList.add('active')
+
+            }
+
+        })
+        starValue = clickedIdx + 1;
+        console.log(`star of index ${clickedIdx} was clicked`)
+    })
 })
 
 
 
-//we hella need to figure out the rating as well as the theme functionality 
-
-
-
-
-
+  
