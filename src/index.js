@@ -45,8 +45,6 @@ function pastDreamList(dream) {
     dreamRating.innerText = `Rating: ${dream.rating}`
 
     dreamTitle.addEventListener('click', e => {
-        console.log(`title clicker works`)
-        console.log(dream)
         selectedDreamDetails(dream)
     })
 
@@ -68,6 +66,7 @@ function pastDreamList(dream) {
   
 
 let selectedDream = document.querySelector('.selected-dream')
+//let titleTitle = document.querySelector('#title-title')
 let selectedDreamWrapper = document.querySelector('.wrapper-selected-dream')
 function selectedDreamDetails(dream) {
     removeAllChildNodes(selectedDream)
@@ -82,6 +81,7 @@ function selectedDreamDetails(dream) {
     details.id = 'selected-details'
     image.id = 'selected-image'
 
+    //titleTitle.innerText = dream.title
     title.innerText = `Title: ${dream.title }`
     theme.innerText = ` Theme: ${dream.theme}`
     rating.innerText = `Rating: ${dream.rating}`
@@ -148,36 +148,16 @@ button.addEventListener('submit', e => {
     dreamObject.title = titleEntry.value
     query = themeEntry.value
     dreamObject.rating = ratingEntry.value 
-    //dreamObject.image = imageEntry.value 
+    dreamObject.image = imageEntry.value 
     pastDreamList(dreamObject)
     dreamImageBar(dreamObject)
     e.target.reset()
 
    postFunction(dreamObject)
-   otherAPI()
+   
    
 })
 
-function otherAPI() {
-fetch(`https://api.pexels.com/v1/search?query=${query}`,{
-            method : "GET",
-            mode  : 'cors',
-            headers : {
-                "Authorization":"kZLIYkxusXzOsvUbw9OAZaadOKSuJVzhvnHgS2oJOXAcUQ8kzZUn4uVo",
-            }
-         }) .then(res => res.json())
-            .then(data => {
-                usefulURL = data.photos[0].url
-               testFunction(usefulURL)
-
-            })
-        }
-
-function testFunction(url) {
-    console.log(`scopes a bitch`, url)
-    dreamObject.image = url
-    console.log(`scope is chill tho`, dreamObject.image)
-}
 
 function postFunction(dreamObject) {
     fetch(`http://localhost:3000/current-stored-dreams`, {
