@@ -55,11 +55,11 @@
 }
 
 .selected-dream {
-    background-color: #736A25;
     background: no-repeat;
     background-size: contain;
-    opacity: .4;
+    opacity: .9;
     
+    background-color: #736A25;
 
     grid-row: 3/6;
     grid-column: 2/6;
@@ -71,6 +71,10 @@
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+/* .selected-dream>h3 {
+    opacity: 1;
+} */
 
 #selected-title {
    grid-column: 1/6;

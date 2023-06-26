@@ -41,10 +41,58 @@ function pastDreamList(dream) {
 
     dreamTitle.addEventListener('click', e => {
         console.log(`title clicker works`)
+        selectedDreamDetails(dream)
     })
 
     pastDreams.append(dreamTitle, dreamTheme, dreamRating)
 }
+
+// =======photoBar Size Change 
+
+
+
+// = document.querySelector('')
+
+// function photoClassChanger (element) {
+//     element.classList.remove('display-image')
+//     element.classList.add('display-image-larger')
+//     console.log(`photoClassChanger is called`)
+//   }
+
+  
+
+let selectedDream = document.querySelector('.selected-dream')
+let selectedDreamWrapper = document.querySelector('.wrapper-selected-dream')
+function selectedDreamDetails(dream) {
+    removeAllChildNodes(selectedDream)
+    let title = document.createElement('h3')
+    let theme = document.createElement('h5')
+    let rating = document.createElement('h5')
+    let details = document.createElement('p')
+    let image = document.createElement('img')
+    title.id = 'selected-title'
+    theme.id = 'selected-theme'
+    rating.id = 'selected-rating'
+    details.id = 'selected-details'
+    image.id = 'selected-image'
+
+    title.innerText = `Title: ${dream.title }`
+    theme.innerText = ` Theme: ${dream.theme}`
+    rating.innerText = `Rating: ${dream.rating}`
+    details.innerText = `Details: ${dream.details}`
+    
+   selectedDream.style.backgroundImage = `url(${dream.image})`
+    selectedDream.append(title, theme, rating, details)
+    
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+//===========PHOTO BOX STUFF=======================
 let photoBox = document.querySelector('.photo-box')
 function dreamImageBar(dream) {
     let dreamImage = document.createElement('img')
