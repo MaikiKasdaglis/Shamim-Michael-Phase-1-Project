@@ -7,14 +7,20 @@ document.addEventListener('DOMContentLoaded', () => {
             pastDreamList(dream)
             dreamImageBar(dream)
         })
-    })
-    fetch(`https://unsplash.com/search/photos?querey=penguin&client_id=iAArY-NV6uzrdP4LEbkH3OGMnuBmClGmAAZ7PeTINEc`)
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-    }) //not sure whats up here. hardcoded 'penguins' 
-    //once we can fetch data, will string interpolate dream themes to querey relevant images 
+    }) 
+        const query = 'nature'
+        fetch(`https://api.pexels.com/v1/search?query=${query}`,{
+            method: "GET",
+            mode  : 'cors',
+            headers : {
+                "Authorization":"kZLIYkxusXzOsvUbw9OAZaadOKSuJVzhvnHgS2oJOXAcUQ8kzZUn4uVo",
+            }
+         }) .then(res => res.json())
+            .then(data => 
+                console.log(data))
+    
 })
+
 
 
 
