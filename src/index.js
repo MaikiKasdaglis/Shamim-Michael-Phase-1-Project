@@ -162,14 +162,11 @@ button.addEventListener('submit', e => {
     dreamObject.title = titleEntry.value
     dreamObject.theme = themeEntry.value
     dreamObject.rating = ratingEntry.value 
-    imageQuery(themeEntry.value)
-    dreamObject.image = usefulImage
+    dreamObject.image = imageEntry.value 
     pastDreamList(dreamObject)
     dreamImageBar(dreamObject)
-    // const dreamImage = imageQuery(themeEntry.value).then(response => console.log(response["photos"][0]["url"]))
-    // dreamObject.image = dreamImage
 
-  
+
     e.target.reset()
 
 })
