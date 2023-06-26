@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pastDreamList(dream)
             dreamImageBar(dream)
         })
+        selectedDreamDetails(data[0])
     }) 
         const query = 'nature'
         fetch(`https://api.pexels.com/v1/search?query=${query}`,{
