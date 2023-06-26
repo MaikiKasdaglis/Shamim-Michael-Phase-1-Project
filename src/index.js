@@ -98,12 +98,24 @@ function dreamImageBar(dream) {
     let dreamImage = document.createElement('img')
     dreamImage.classList.add("display-image")
     dreamImage.src = dream.image
+    dreamImage.addEventListener('mouseover', e => {
+        // relevantImage = dreamImage
+        photoClassChanger(dreamImage)
+    })
+    dreamImage.addEventListener('mouseout', e => {
+        photoChangBack(dreamImage)
+    })
     photoBox.appendChild(dreamImage)
-
-      //how do we achieve all images get resized uniformly before posting to dom? 
-
 }
 
+function photoClassChanger (element) {
+        element.classList.remove('display-image')
+        element.classList.add('display-image-larger')
+      }
+function photoChangBack (element) {
+    element.classList.remove('display-image-larger')
+    element.classList.add('display-image')
+    }
 
 
 
