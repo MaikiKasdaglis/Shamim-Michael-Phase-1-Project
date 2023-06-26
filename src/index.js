@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
 let pastDreams =document.querySelector(`.stored-dreams`)
 //formatting is so bad. not even sure where to start. 
 function pastDreamList(dream) {
@@ -55,6 +56,7 @@ function pastDreamList(dream) {
   
 
 let selectedDream = document.querySelector('.selected-dream')
+let selectedDreamWrapper = document.querySelector('.wrapper-selected-dream')
 function selectedDreamDetails(dream) {
     removeAllChildNodes(selectedDream)
     let title = document.createElement('h3')
@@ -72,9 +74,8 @@ function selectedDreamDetails(dream) {
     theme.innerText = ` Theme: ${dream.theme}`
     rating.innerText = `Rating: ${dream.rating}`
     details.innerText = `Details: ${dream.details}`
-    image.src = dream.image
-
-    selectedDream.style.backgroundImage = `url(${dream.image})`
+    
+   selectedDream.style.backgroundImage = `url(${dream.image})`
     selectedDream.append(title, theme, rating, details)
     
 }
