@@ -1,4 +1,5 @@
-let usefulImage
+let usefulURL
+let query         
 
 document.addEventListener('DOMContentLoaded', () => {
     fetch(` http://localhost:3000/current-stored-dreams`)
@@ -25,25 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //     const images = await response.json()
 //     return images
 // }
-function imageQuery (query) {
-    let image;
-    fetch(`https://api.pexels.com/v1/search?query=${query}`,{
-        method : "GET",
-        mode  : 'cors',
-        headers : {
-            "Authorization":"kZLIYkxusXzOsvUbw9OAZaadOKSuJVzhvnHgS2oJOXAcUQ8kzZUn4uVo",
-        }
-     }) .then(res => res.json())
-        .then(data => {
-            console.log(`photo querey`, data)
-            pictureArrayMaker(data)
-        })
-           
-    }
 
-function pictureArrayMaker(data) {
-    usefulImage = data.photos[0].url
-}
 
 
 let pastDreams =document.querySelector(`.stored-dreams`)
@@ -107,14 +90,14 @@ function selectedDreamDetails(dream) {
 
    //selectedDream.style.backgroundImage = `url(${dream.image})`
     selectedDream.append(title, theme, rating, details, image)
-    
-}
+    }
 
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
 }
+
 
 //===========PHOTO BOX STUFF=======================
 let photoBox = document.querySelector('.photo-box')
@@ -141,6 +124,8 @@ function photoChangBack (element) {
     element.classList.add('display-image')
     }
 
+//========Dream form stuff ===============
+
 let button = document.querySelector('#text-form')
 let dreamDetails = document.querySelector("#dream-text-area")
 let titleEntry = document.querySelector('#title-entry')
@@ -161,22 +146,80 @@ button.addEventListener('submit', e => {
     console.log(titleEntry.value)
     dreamObject.details = dreamDetails.value
     dreamObject.title = titleEntry.value
-    dreamObject.theme = themeEntry.value
+    query = themeEntry.value
     dreamObject.rating = ratingEntry.value 
-    dreamObject.image = imageEntry.value 
+    //dreamObject.image = imageEntry.value 
     pastDreamList(dreamObject)
     dreamImageBar(dreamObject)
-
-
     e.target.reset()
 
+   postFunction(dreamObject)
+   otherAPI()
+   
 })
+
+function otherAPI() {
+fetch(`https://api.pexels.com/v1/search?query=${query}`,{
+            method : "GET",
+            mode  : 'cors',
+            headers : {
+                "Authorization":"kZLIYkxusXzOsvUbw9OAZaadOKSuJVzhvnHgS2oJOXAcUQ8kzZUn4uVo",
+            }
+         }) .then(res => res.json())
+            .then(data => {
+                usefulURL = data.photos[0].url
+               testFunction(usefulURL)
+
+            })
+        }
+
+function testFunction(url) {
+    console.log(`scopes a bitch`, url)
+    dreamObject.image = url
+    console.log(`scope is chill tho`, dreamObject.image)
+}
+
+function postFunction(dreamObject) {
+    fetch(`http://localhost:3000/current-stored-dreams`, {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            dreamObject
+        })
+        })
+
+}
+
+//===========image query stuff 
+
+// function imageQuery(query) {
+//     fetch(`https://api.pexels.com/v1/search?query=${query}`,{
+//         method : "GET",
+//         mode  : 'cors',
+//         headers : {
+//             "Authorization":"kZLIYkxusXzOsvUbw9OAZaadOKSuJVzhvnHgS2oJOXAcUQ8kzZUn4uVo",
+//         }
+//      }) .then(res => res.json())
+//         .then(data => {
+//             console.log(`photo querey`, data)
+//             pictureArrayMaker(data)
+//         })
+           
+//     }
+
+// function pictureArrayMaker(data) {
+//     usefulImage = data.photos[0].url
+//     console.log(usefulImage)
+//     console.log(`i'm being called`)
+// }
 
 
 
 //we hella need to figure out the rating as well as the theme functionality 
 
 
-
+               
 
 
