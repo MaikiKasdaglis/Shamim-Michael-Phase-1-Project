@@ -1,20 +1,49 @@
-let relevantImage;
-
+let usefulImage
 
 document.addEventListener('DOMContentLoaded', () => {
     fetch(` http://localhost:3000/current-stored-dreams`)
     .then(res => res.json())
     .then(data => {
-        selectedDreamDetails(data[0])
         data.forEach(dream => {
             pastDreamList(dream)
             dreamImageBar(dream)
         })
-    })
-
+        selectedDreamDetails(data[0])
+    }) 
+    
 })
 
 
+// async function imageQuery(query){
+//     const response = await fetch(`https://api.pexels.com/v1/search?query=${query}`,{
+//                 method : "GET",
+//                 mode  : 'cors',
+//                 headers : {
+//                     "Authorization":"kZLIYkxusXzOsvUbw9OAZaadOKSuJVzhvnHgS2oJOXAcUQ8kzZUn4uVo",
+//                 }
+//              })
+//     const images = await response.json()
+//     return images
+// }
+function imageQuery (query) {
+    let image;
+    fetch(`https://api.pexels.com/v1/search?query=${query}`,{
+        method : "GET",
+        mode  : 'cors',
+        headers : {
+            "Authorization":"kZLIYkxusXzOsvUbw9OAZaadOKSuJVzhvnHgS2oJOXAcUQ8kzZUn4uVo",
+        }
+     }) .then(res => res.json())
+        .then(data => {
+            console.log(`photo querey`, data)
+            pictureArrayMaker(data)
+        })
+           
+    }
+
+function pictureArrayMaker(data) {
+    usefulImage = data.photos[0].url
+}
 
 
 let pastDreams =document.querySelector(`.stored-dreams`)
@@ -133,10 +162,14 @@ button.addEventListener('submit', e => {
     dreamObject.title = titleEntry.value
     dreamObject.theme = themeEntry.value
     dreamObject.rating = ratingEntry.value 
-    dreamObject.image = imageEntry.value
-    console.log(dreamObject)
+    imageQuery(themeEntry.value)
+    dreamObject.image = usefulImage
     pastDreamList(dreamObject)
     dreamImageBar(dreamObject)
+    // const dreamImage = imageQuery(themeEntry.value).then(response => console.log(response["photos"][0]["url"]))
+    // dreamObject.image = dreamImage
+
+  
     e.target.reset()
 
 })
