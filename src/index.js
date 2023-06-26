@@ -1,19 +1,17 @@
+let relevantImage;
+
+
 document.addEventListener('DOMContentLoaded', () => {
     fetch(` http://localhost:3000/current-stored-dreams`)
     .then(res => res.json())
     .then(data => {
-        console.log(`this is the array we will push our dream objects too`, data)
+        selectedDreamDetails(data[0])
         data.forEach(dream => {
             pastDreamList(dream)
             dreamImageBar(dream)
         })
     })
-    fetch(`https://unsplash.com/search/photos?querey=penguin&client_id=iAArY-NV6uzrdP4LEbkH3OGMnuBmClGmAAZ7PeTINEc`)
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-    }) //not sure whats up here. hardcoded 'penguins' 
-    //once we can fetch data, will string interpolate dream themes to querey relevant images 
+
 })
 
 
@@ -35,27 +33,90 @@ function pastDreamList(dream) {
 
     dreamTitle.addEventListener('click', e => {
         console.log(`title clicker works`)
+        console.log(dream)
+        selectedDreamDetails(dream)
     })
 
     pastDreams.append(dreamTitle, dreamTheme, dreamRating)
 }
+
+// =======photoBar Size Change 
+
+
+
+// = document.querySelector('')
+
+// function photoClassChanger (element) {
+//     element.classList.remove('display-image')
+//     element.classList.add('display-image-larger')
+//     console.log(`photoClassChanger is called`)
+//   }
+
+  
+
+let selectedDream = document.querySelector('.selected-dream')
+function selectedDreamDetails(dream) {
+    removeAllChildNodes(selectedDream)
+    let title = document.createElement('h3')
+    let theme = document.createElement('h5')
+    let rating = document.createElement('h5')
+    let details = document.createElement('p')
+    let image = document.createElement('img')
+    title.id = 'selected-title'
+    theme.id = 'selected-theme'
+    rating.id = 'selected-rating'
+    details.id = 'selected-details'
+    image.id = 'selected-image'
+
+    title.innerText = `Title: ${dream.title }`
+    theme.innerText = ` Theme: ${dream.theme}`
+    rating.innerText = `Rating: ${dream.rating}`
+    details.innerText = `Details: ${dream.details}`
+    image.src = dream.image
+
+    selectedDream.style.backgroundImage = `url(${dream.image})`
+    selectedDream.append(title, theme, rating, details)
+    
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+//===========PHOTO BOX STUFF=======================
 let photoBox = document.querySelector('.photo-box')
 function dreamImageBar(dream) {
     let dreamImage = document.createElement('img')
     dreamImage.classList.add("display-image")
     dreamImage.src = dream.image
+    dreamImage.addEventListener('mouseover', e => {
+        // relevantImage = dreamImage
+        photoClassChanger(dreamImage)
+    })
+    dreamImage.addEventListener('mouseout', e => {
+        photoChangBack(dreamImage)
+    })
     photoBox.appendChild(dreamImage)
-
-      //how do we achieve all images get resized uniformly before posting to dom? 
-
 }
 
+function photoClassChanger (element) {
+        element.classList.remove('display-image')
+        element.classList.add('display-image-larger')
+      }
+function photoChangBack (element) {
+    element.classList.remove('display-image-larger')
+    element.classList.add('display-image')
+    }
 
+let button = document.querySelector('#text-form')
+let dreamDetails = document.querySelector("#dream-text-area")
+let titleEntry = document.querySelector('#title-entry')
+let themeEntry = document.querySelector('#theme-entry')
+let ratingEntry = document.querySelector('#rating-entry')
+let imageEntry = document.querySelector('#image-entry')
 
-
-button = document.querySelector('#text-button')
-dreamDetails = document.querySelector("#dream-text-area")
-titleEntry = document.querySelector('#title-entry')
 let dreamObject = {
     title: '',
     rating: '',
@@ -63,14 +124,19 @@ let dreamObject = {
     details: '',
     image: '',
 }
-button.addEventListener('click', e => {
+button.addEventListener('submit', e => {
     e.preventDefault()
     console.log(dreamDetails.value)
     console.log(titleEntry.value)
     dreamObject.details = dreamDetails.value
     dreamObject.title = titleEntry.value
+    dreamObject.theme = themeEntry.value
+    dreamObject.rating = ratingEntry.value 
+    dreamObject.image = imageEntry.value
     console.log(dreamObject)
     pastDreamList(dreamObject)
+    dreamImageBar(dreamObject)
+    e.target.reset()
 
 })
 
