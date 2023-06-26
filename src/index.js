@@ -1,15 +1,16 @@
+
+let query 
 document.addEventListener('DOMContentLoaded', () => {
     fetch(` http://localhost:3000/current-stored-dreams`)
     .then(res => res.json())
     .then(data => {
-        console.log(`this is the array we will push our dream objects too`, data)
         data.forEach(dream => {
             pastDreamList(dream)
             dreamImageBar(dream)
         })
         selectedDreamDetails(data[0])
     }) 
-        const query = 'nature'
+      
         fetch(`https://api.pexels.com/v1/search?query=${query}`,{
             method : "GET",
             mode  : 'cors',
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
          }) .then(res => res.json())
             .then(data => 
-                console.log(data))
+                console.log(`photo querey`, data))
     
 })
 
