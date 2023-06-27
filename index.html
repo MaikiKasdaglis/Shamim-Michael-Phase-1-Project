@@ -1,66 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="src/index.js" charset="utf-8"></script> 
-    <link rel ='stylesheet' type="text/css" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="src/index.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="style2.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="card fullwidth photo-box">
+        <h3 id="title-title">DREAM JOURNAL</h3>
+        <div class="image-wrapper"></div>
+      </div>
+      <div class="content-wrapper">
+        <div class="card narrow stored-dreams">
+          <h4 id="pd-title">PAST DREAMS</h4>
+        </div>
+        <div class="wide-row">
+          <div class="card wide selected-dream">selected dream</div>
 
-
-<div class="grid"> 
-    <div class="photo-box"> 
-       <h3 id="title-title">DREAM JOURNAL</h3>
-    </div>
-    <div class="stored-dreams"> 
-        <h4 id="pd-title">PAST DREAMS</h4>
-    </div>
-
-
-    <div class='selected-dream'> selected dream</div> 
-
-
-        <div class="dream-form">
+          <div class="card wide dream-form">
             <form id="text-form">
+              <textarea
+                id="dream-text-area"
+                type="text"
+                name="details"
+                placeholder="Write the details of your dream here"
+              >
+              </textarea>
+              <input
+                id="title-entry"
+                type="text"
+                name="title"
+                placeholder="Dream Title"
+              />
+              <input
+                id="rating-entry"
+                type="text"
+                name="rating"
+                placeholder="Rating"
+              />
+              <input
+                id="theme-entry"
+                type="text"
+                name="rating"
+                placeholder="Theme"
+              />
+              <input
+                id="image-entry"
+                type="text"
+                name="rating"
+                placeholder="Image"
+              />
+              <button id="text-button">Submit</button>
+            </form>
 
-                    <textarea id='dream-text-area' type="text" name="details" placeholder="Write the details of your dream here"> </textarea>   
-                    <input id='title-entry' type="text" name="title" placeholder="Dream Title">
-                    <input id='rating-entry' type="text" name="rating" placeholder="Rating">
-                    <input id='theme-entry' type="text" name="rating" placeholder="Theme">
-                    <input id='image-entry' type="text" name="rating" placeholder="Image">
-                    <!-- need to add rating system (stars may be too technical for now) as well as theme form (dropdown may be too technical as well.) 
-                    like the rest of the app, formatting is proving difficult  -->
-                    <button id="text-button">Submit</button>
-                </form>
-            <div class="stars">
+            <!-- <div class="stars">
                 <a>⭐</a>
                 <a>⭐</a>
                 <a>⭐</a>
                 <a>⭐</a>
                 <a>⭐</a>
-            </div>
-
-
+            </div> -->
+          </div>
+        </div>
+      </div>
     </div>
-
-</div>
-
-
-
-
-
-
-
-
-
-    <!-- THIS WAS FROM WHEN WE DID STATIC -->
-<!--     
-    <div class="photo-box"> testing this box </div>
-    <div class="stored-dreams"> stored dreams</div>
-    <div class='selected-dream'> selected dream</div>
-    <div class="dream-form">dream form</div>
-     -->
-</body>
+  </body>
 </html>

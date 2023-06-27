@@ -24,10 +24,14 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
     grid-gap: 0em;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.stored-dreams h3:hover {
+    text-decoration: underline;
 }
 #pd-title {
     grid-column: 1/4;
@@ -65,7 +69,7 @@
     grid-column: 2/6;
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: repeat(17 1fr);
+    grid-template-columns: repeat(3 1fr);
     grid-template-rows: repeat(1, 1fr);
     grid-gap: 1em;
     border-radius: 10px;
@@ -253,7 +257,7 @@
 }
 .stars {
     position: absolute;
-    top: 14em;
+    top: 10em;
     left: 2.5em;
     margin-top: -3em;
 
