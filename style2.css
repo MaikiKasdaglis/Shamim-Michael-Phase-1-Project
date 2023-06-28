@@ -1,44 +1,107 @@
-.grid {
+/* ========================================== */
+body {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 0, 0, 0.1),
+    rgba(0, 0, 255, 0.1)
+  );
+}
+
+.flex {
   display: flex;
+}
+.grid {
   flex-direction: column;
 }
 
 .card {
-  display: flex;
-  border: 1px solid red;
+  border: 2px solid blue;
+  border-radius: 25px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   padding: 32px;
   margin: 16px;
   flex-direction: column;
+  align-items: center;
 }
 
 .fullwidth {
-  width: 100%;
   align-items: center;
+  overflow-x: scroll;
 }
 
 .narrow {
   flex: 1;
+  min-width: 16em;
+  max-width: 24em;
+}
+.stored-dreams h3:hover {
+  text-decoration: underline;
+  /* background-color: lightblue; */
+}
+.dream-div:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 0, 234, 0.2),
+    rgba(0, 255, 81, 0.2)
+  );
+  color: rgb(53, 25, 144);
+}
+.dream-div {
+  padding: 1em;
 }
 .wide-row {
-  display: flex;
   flex-direction: column;
 }
 .wide {
   flex: 3;
 }
+#selected-image {
+  max-width: 30em;
+}
 
 .content-wrapper {
+}
+
+.display-image {
+  height: 10em;
+  width: 13em;
+}
+
+.display-image-larger {
+  height: 15em;
+  width: 18em;
+}
+
+.form-inputs {
+  border: 2px solid blue;
+  border-radius: 20px;
+  margin: 1em;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 0, 0, 0.2),
+    rgba(0, 0, 255, 0.2)
+  );
+}
+#text-button:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 0, 234, 0.2),
+    rgba(0, 255, 81, 0.2)
+  );
+  color: white;
+}
+#dream-text-area {
   display: flex;
+  width: 68em;
+  height: 20em;
+  margin: 1em;
 }
 
-.image-wrapper {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.image-wrapper img {
-  width: 100%;
-  /* max-height: 200px; */
-  height: 200px;
+#selected-image-div {
+  border: 2px solid blue;
+  border-radius: 25px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 32px;
+  margin: 16px;
 }

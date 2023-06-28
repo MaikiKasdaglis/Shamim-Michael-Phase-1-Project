@@ -8,61 +8,65 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="grid">
-      <div class="card fullwidth photo-box">
+    <div class="flex grid">
+      <div class="flex card fullwidth photo-box">
         <h3 id="title-title">DREAM JOURNAL</h3>
-        <div class="image-wrapper"></div>
+        <div class="flex image-wrapper"></div>
       </div>
-      <div class="content-wrapper">
-        <div class="card narrow stored-dreams">
+      <div class="flex content-wrapper">
+        <div class="flex card narrow stored-dreams">
           <h4 id="pd-title">PAST DREAMS</h4>
         </div>
-        <div class="wide-row">
-          <div class="card wide selected-dream">selected dream</div>
+        <div class="flex wide-row">
+          <div class="flex card wide selected-dream">selected dream</div>
 
-          <div class="card wide dream-form">
+          <div class="flex card wide dream-form">
             <form id="text-form">
+              <label for="details">Dream Details:</label>
               <textarea
+                class="form-inputs"
                 id="dream-text-area"
                 type="text"
                 name="details"
                 placeholder="Write the details of your dream here"
               >
               </textarea>
+              <label for="title">Dream Title:</label>
               <input
+                class="form-inputs"
                 id="title-entry"
                 type="text"
                 name="title"
-                placeholder="Dream Title"
+                placeholder="  Dream Title"
               />
+              <label for="rating">Rating:</label>
               <input
+                class="form-inputs"
                 id="rating-entry"
-                type="text"
+                type="number"
                 name="rating"
-                placeholder="Rating"
+                min="1"
+                max="10"
+                placeholder="  0"
               />
+              <label for="theme">Dream Theme:</label>
               <input
+                class="form-inputs"
                 id="theme-entry"
                 type="text"
-                name="rating"
-                placeholder="Theme"
+                name="theme"
+                placeholder="  Theme"
               />
+              <label for="image">Image URL:</label>
               <input
+                class="form-inputs"
                 id="image-entry"
-                type="text"
-                name="rating"
-                placeholder="Image"
+                type="url"
+                name="image"
+                placeholder="  Image"
               />
-              <button id="text-button">Submit</button>
+              <button id="text-button" class="form-inputs">Submit</button>
             </form>
-
-            <!-- <div class="stars">
-                <a>⭐</a>
-                <a>⭐</a>
-                <a>⭐</a>
-                <a>⭐</a>
-                <a>⭐</a>
-            </div> -->
           </div>
         </div>
       </div>

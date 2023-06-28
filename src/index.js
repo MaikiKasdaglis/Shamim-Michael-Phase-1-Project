@@ -27,8 +27,11 @@ function pastDreamList(dream) {
     console.log(`title clicker works`);
     selectedDreamDetails(dream);
   });
-
-  pastDreams.append(dreamTitle, dreamTheme, dreamRating);
+  let dreamDiv = document.createElement("div");
+  dreamDiv.classList.add("form-inputs");
+  dreamDiv.classList.add("dream-div");
+  dreamDiv.append(dreamTitle, dreamTheme, dreamRating);
+  pastDreams.append(dreamDiv);
 }
 
 let selectedDream = document.querySelector(".selected-dream");
@@ -54,7 +57,10 @@ function selectedDreamDetails(dream) {
   image.src = dream.image;
 
   //selectedDream.style.backgroundImage = `url(${dream.image})`
-  selectedDream.append(title, theme, rating, details, image);
+  selectedImageDiv = document.createElement("div");
+  selectedImageDiv.id = "selected-image-div";
+  selectedImageDiv.append(image);
+  selectedDream.append(title, theme, rating, details, selectedImageDiv);
 }
 
 function removeAllChildNodes(parent) {
@@ -115,29 +121,11 @@ button.addEventListener("submit", (e) => {
   dreamObject.theme = themeEntry.value;
   dreamObject.image = imageEntry.value;
   console.log(dreamObject);
+  e.target.reset();
   pastDreamList(dreamObject);
   postFunction(dreamObject);
   dreamImageBar(dreamObject);
-});
-
-// eventlistner for ratting stars
-
-const stars = document.querySelectorAll(".stars a");
-const starwrapper = document.querySelector(".stars ");
-let starValue = null;
-
-stars.forEach((star, clickedIdx) => {
-  star.addEventListener("click", () => {
-    starwrapper.classList.add("disabled");
-
-    stars.forEach((otherStar, otheridx) => {
-      if (otheridx <= clickedIdx) {
-        otherStar.classList.add("active");
-      }
-    });
-    starValue = clickedIdx + 1;
-    console.log(`star of index ${clickedIdx} was clicked`);
-  });
+  console.log(dreamObject);
 });
 
 function postFunction(dreamObject) {
@@ -146,8 +134,6 @@ function postFunction(dreamObject) {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      dreamObject,
-    }),
+    body: JSON.stringify(dreamObject),
   });
 }

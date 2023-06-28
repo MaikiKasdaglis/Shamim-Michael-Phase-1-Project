@@ -23,6 +23,70 @@
       "details": "The dream starts with Pomeranians organizing secret meetings in dog parks, where they discuss their strategies for world domination. They create a Pomeranian army, complete with tiny uniforms and helmets, and train themselves in covert operations. They even develop advanced technology, like miniature tanks and helicopters, all designed to suit their small stature.",
       "rating": 9,
       "theme": "POMERANIANS"
+    },
+    {
+      "title": "parrots",
+      "rating": "3",
+      "theme": "birds",
+      "details": "dreamt about birds ",
+      "image": "https://i.redd.it/z72yvdkaa2o91.jpg",
+      "id": 4
+    },
+    {
+      "title": "Cute owl ",
+      "rating": "10",
+      "theme": "birds",
+      "details": "              dream ",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-1b55c31a6b5f0fa57b257cdf44bdb85a-lq",
+      "id": 5
+    },
+    {
+      "title": "Ant Dream",
+      "rating": "9",
+      "theme": "Bugs",
+      "details": "              had a dream about cute ants ",
+      "image": "https://i.natgeofe.com/n/a4deb36e-3956-4a28-bff3-0968319f16e7/01-animal-look-alikes-unknown.jpg",
+      "id": 6
+    },
+    {
+      "title": "Wolf Scrolling ",
+      "rating": "9",
+      "theme": "Wolves ",
+      "details": "              i dreamt a wolf image would test to see if the image bar would scroll",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN8CaCoXzskCibChWLtDhZMRiYujNJ1PPF0g&usqp=CAU",
+      "id": 7
+    },
+    {
+      "title": "",
+      "rating": "",
+      "theme": "",
+      "details": "              ",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN8CaCoXzskCibChWLtDhZMRiYujNJ1PPF0g&usqp=CAU",
+      "id": 8
+    },
+    {
+      "title": "",
+      "rating": "",
+      "theme": "",
+      "details": "              ",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN8CaCoXzskCibChWLtDhZMRiYujNJ1PPF0g&usqp=CAU",
+      "id": 9
+    },
+    {
+      "title": "",
+      "rating": "",
+      "theme": "",
+      "details": "              ",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN8CaCoXzskCibChWLtDhZMRiYujNJ1PPF0g&usqp=CAU",
+      "id": 10
+    },
+    {
+      "title": "",
+      "rating": "",
+      "theme": "",
+      "details": "              ",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN8CaCoXzskCibChWLtDhZMRiYujNJ1PPF0g&usqp=CAU",
+      "id": 11
     }
   ]
 }
